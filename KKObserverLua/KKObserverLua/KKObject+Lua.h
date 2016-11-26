@@ -8,6 +8,9 @@
 
 #import <KKObserver/KKObserver.h>
 
+/**
+ * object:changedKeys(["a","2"])
+ */
 @interface KKObject (Lua)
 
 @end

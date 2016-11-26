@@ -8,6 +8,10 @@
 
 #import <KKObserver/KKObserver.h>
 
+/**
+ * observer:on(["a","2"],func,object|nil)
+ * observer:off(["a","2"],object|nil)
+ */
 @interface KKObserver (Lua)
 
 @end

@@ -11,15 +11,15 @@
 
 static int KKObjectChangedKeysFunction(lua_State * L) {
     
-    KKObject * v = lua_toObject(L, lua_upvalueindex(1));
+    int top = lua_gettop(L);
     
-    if([v isKindOfClass:[KKObject class]]) {
+    if(top > 0 && lua_isObject(L, -top)) {
+        
+        KKObject * v = lua_toObject(L, - top);
         
         NSMutableArray * keys = [NSMutableArray arrayWithCapacity:4];
         
-        int top = lua_gettop(L);
-        
-        for(int i = 0 ;i < top; i++) {
+        for(int i = 1 ;i < top; i++) {
             
             id vv = lua_toValue(L, - top + i);
             
@@ -44,7 +44,6 @@ static int KKObjectChangedKeysFunction(lua_State * L) {
 -(int) KKLuaObjectGet:(NSString *) key L:(lua_State *)L {
     if([key isEqualToString:@"changeKeys"]) {
         
-        lua_pushObject(L, self);
         lua_pushcclosure(L, KKObjectChangedKeysFunction, 1);
         
         return 1;
