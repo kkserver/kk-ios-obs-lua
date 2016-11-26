@@ -94,13 +94,13 @@ static int KKObserverOffFunction(lua_State * L) {
 -(int) KKLuaObjectGet:(NSString *) key L:(lua_State *)L {
     if([key isEqualToString:@"on"]) {
         
-        lua_pushcclosure(L, KKObserverOnFunction, 1);
+        lua_pushcclosure(L, KKObserverOnFunction, 0);
         
         return 1;
     }
     else if([key isEqualToString:@"off"]) {
         
-        lua_pushcclosure(L, KKObserverOffFunction, 1);
+        lua_pushcclosure(L, KKObserverOffFunction, 0);
         
         return 1;
     }

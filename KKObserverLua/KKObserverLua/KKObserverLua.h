@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <KKObserverLua/KKObject+Lua.h>
+#import <KKObserverLua/KKObserver+Lua.h>
 
 //! Project version number for KKObserverLua.
 FOUNDATION_EXPORT double KKObserverLuaVersionNumber;

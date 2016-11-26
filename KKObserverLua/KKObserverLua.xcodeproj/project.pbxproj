@@ -10,9 +10,9 @@
 		ACCDE3D11DE94BB000E6C255 /* KKObserverLua.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCDE3CF1DE94BB000E6C255 /* KKObserverLua.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCDE3EB1DE94BE900E6C255 /* KKLua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCDE3E21DE94BC900E6C255 /* KKLua.framework */; };
 		ACCDE3EC1DE94BEF00E6C255 /* KKObserver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCDE3DC1DE94BC200E6C255 /* KKObserver.framework */; };
-		ACCDE3EF1DE94C2800E6C255 /* KKObject+Lua.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCDE3ED1DE94C2800E6C255 /* KKObject+Lua.h */; };
+		ACCDE3EF1DE94C2800E6C255 /* KKObject+Lua.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCDE3ED1DE94C2800E6C255 /* KKObject+Lua.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCDE3F01DE94C2800E6C255 /* KKObject+Lua.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCDE3EE1DE94C2800E6C255 /* KKObject+Lua.m */; };
-		ACCDE3F31DE94E6500E6C255 /* KKObserver+Lua.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCDE3F11DE94E6500E6C255 /* KKObserver+Lua.h */; };
+		ACCDE3F31DE94E6500E6C255 /* KKObserver+Lua.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCDE3F11DE94E6500E6C255 /* KKObserver+Lua.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCDE3F41DE94E6500E6C255 /* KKObserver+Lua.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCDE3F21DE94E6500E6C255 /* KKObserver+Lua.m */; };
 /* End PBXBuildFile section */
 
