@@ -9,7 +9,9 @@
 #import <KKObserver/KKObserver.h>
 
 /**
- * object:changedKeys(["a","2"])
+ * object.changedKeys(["a","2"])
+ * object.get(["a","2"])
+ * object.set(["a","2"],any)
  */
 @interface KKObject (Lua)
 

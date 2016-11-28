@@ -11,15 +11,15 @@
 
 static int KKObserverOnFunction(lua_State * L) {
     
+    KKObserver * v = lua_toObject(L, lua_upvalueindex(1));
+    
     int top = lua_gettop(L);
     
-    if(top > 2 && lua_isObject(L, -top) && lua_isfunction(L, -top +2) ) {
+    if(top > 1 && lua_isfunction(L, -top +1) ) {
     
-        KKObserver * v = lua_toObject(L, lua_isObject(L, -top));
-      
-        id keys = lua_toValue(L, - top + 1);
-        id weakObject = top > 3 ? lua_toValue(L, -top +3) : nil;
-        BOOL children = top > 4 ? lua_toValue(L, -top +4) : NO;
+        id keys = lua_toValue(L, - top);
+        id weakObject = top > 2 ? lua_toValue(L, -top +2) : nil;
+        BOOL children = top > 3 && lua_isboolean(L, -top +3) && lua_toboolean(L, -top +4) ? YES : NO;
         
         if([keys isKindOfClass:[NSString class]]) {
             keys = [NSArray arrayWithObject:keys];
@@ -66,23 +66,19 @@ static int KKObserverOnFunction(lua_State * L) {
 
 static int KKObserverOffFunction(lua_State * L) {
     
+    KKObserver * v = lua_toObject(L, lua_upvalueindex(1));
+    
     int top = lua_gettop(L);
     
-    if(top > 0 && lua_isObject(L, -top)) {
-        
-        KKObserver * v = lua_toObject(L, lua_isObject(L, -top));
-        
-        id keys = top > 1 ? lua_toValue(L, -top + 1) : [NSArray array];
-        id weakObject = top > 2 ? lua_toValue(L, -top +2) : nil;
-        
-        if([keys isKindOfClass:[NSString class]]) {
-            keys = [NSArray arrayWithObject:keys];
-        }
-        
-        if([keys isKindOfClass:[NSArray class]]) {
-            [v off:keys :weakObject];
-        }
-        
+    id keys = top > 0 ? lua_toValue(L, -top ) : [NSArray array];
+    id weakObject = top > 1 ? lua_toValue(L, -top +1) : nil;
+    
+    if([keys isKindOfClass:[NSString class]]) {
+        keys = [NSArray arrayWithObject:keys];
+    }
+    
+    if([keys isKindOfClass:[NSArray class]]) {
+        [v off:keys :weakObject];
     }
     
     return 0;
@@ -94,13 +90,15 @@ static int KKObserverOffFunction(lua_State * L) {
 -(int) KKLuaObjectGet:(NSString *) key L:(lua_State *)L {
     if([key isEqualToString:@"on"]) {
         
-        lua_pushcclosure(L, KKObserverOnFunction, 0);
+        lua_pushObject(L, self);
+        lua_pushcclosure(L, KKObserverOnFunction, 1);
         
         return 1;
     }
     else if([key isEqualToString:@"off"]) {
         
-        lua_pushcclosure(L, KKObserverOffFunction, 0);
+        lua_pushObject(L, self);
+        lua_pushcclosure(L, KKObserverOffFunction, 1);
         
         return 1;
     }
