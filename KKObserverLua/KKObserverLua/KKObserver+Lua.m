@@ -84,6 +84,12 @@ static int KKObserverOffFunction(lua_State * L) {
     return 0;
 }
 
+static int KKObserverParentFunction(lua_State * L) {
+    KKObserver * v = lua_toObject(L, lua_upvalueindex(1));
+    lua_pushValue(L, v.parent);
+    return 1;
+}
+
 
 @implementation KKObserver (Lua)
 
@@ -99,6 +105,13 @@ static int KKObserverOffFunction(lua_State * L) {
         
         lua_pushObject(L, self);
         lua_pushcclosure(L, KKObserverOffFunction, 1);
+        
+        return 1;
+    }
+    else if([key isEqualToString:@"parent"]) {
+        
+        lua_pushObject(L, self);
+        lua_pushcclosure(L, KKObserverParentFunction, 1);
         
         return 1;
     }
