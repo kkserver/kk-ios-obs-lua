@@ -7,52 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC7F32711E72667900868EE8 /* KKLua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7F326F1E72667900868EE8 /* KKLua.framework */; };
+		AC7F32721E72667900868EE8 /* KKObserver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7F32701E72667900868EE8 /* KKObserver.framework */; };
 		ACCDE3D11DE94BB000E6C255 /* KKObserverLua.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCDE3CF1DE94BB000E6C255 /* KKObserverLua.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ACCDE3EB1DE94BE900E6C255 /* KKLua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCDE3E21DE94BC900E6C255 /* KKLua.framework */; };
-		ACCDE3EC1DE94BEF00E6C255 /* KKObserver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCDE3DC1DE94BC200E6C255 /* KKObserver.framework */; };
 		ACCDE3EF1DE94C2800E6C255 /* KKObject+Lua.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCDE3ED1DE94C2800E6C255 /* KKObject+Lua.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCDE3F01DE94C2800E6C255 /* KKObject+Lua.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCDE3EE1DE94C2800E6C255 /* KKObject+Lua.m */; };
 		ACCDE3F31DE94E6500E6C255 /* KKObserver+Lua.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCDE3F11DE94E6500E6C255 /* KKObserver+Lua.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCDE3F41DE94E6500E6C255 /* KKObserver+Lua.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCDE3F21DE94E6500E6C255 /* KKObserver+Lua.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		ACCDE3DB1DE94BC200E6C255 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ACCDE3D71DE94BC200E6C255 /* KKObserver.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = ACC3FDD81DB094E900832008;
-			remoteInfo = KKObserver;
-		};
-		ACCDE3E11DE94BC900E6C255 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ACCDE3DD1DE94BC900E6C255 /* KKLua.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = ACCDE3361DE93E7800E6C255;
-			remoteInfo = KKLua;
-		};
-		ACCDE3E71DE94BDF00E6C255 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ACCDE3D71DE94BC200E6C255 /* KKObserver.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ACC3FDD71DB094E900832008;
-			remoteInfo = KKObserver;
-		};
-		ACCDE3E91DE94BE200E6C255 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ACCDE3DD1DE94BC900E6C255 /* KKLua.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ACCDE3351DE93E7800E6C255;
-			remoteInfo = KKLua;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		AC7F326F1E72667900868EE8 /* KKLua.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KKLua.framework; path = ../../../../../../../Frameworks/KKLua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7F32701E72667900868EE8 /* KKObserver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KKObserver.framework; path = ../../../../../../../Frameworks/KKObserver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACCDE3CC1DE94BB000E6C255 /* KKObserverLua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KKObserverLua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACCDE3CF1DE94BB000E6C255 /* KKObserverLua.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKObserverLua.h; sourceTree = "<group>"; };
 		ACCDE3D01DE94BB000E6C255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACCDE3D71DE94BC200E6C255 /* KKObserver.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KKObserver.xcodeproj; path = "../../kk-ios-observer/KKObserver/KKObserver.xcodeproj"; sourceTree = "<group>"; };
-		ACCDE3DD1DE94BC900E6C255 /* KKLua.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KKLua.xcodeproj; path = "../../kk-ios-lua/KKLua/KKLua.xcodeproj"; sourceTree = "<group>"; };
 		ACCDE3ED1DE94C2800E6C255 /* KKObject+Lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KKObject+Lua.h"; sourceTree = "<group>"; };
 		ACCDE3EE1DE94C2800E6C255 /* KKObject+Lua.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KKObject+Lua.m"; sourceTree = "<group>"; };
 		ACCDE3F11DE94E6500E6C255 /* KKObserver+Lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KKObserver+Lua.h"; sourceTree = "<group>"; };
@@ -64,21 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACCDE3EC1DE94BEF00E6C255 /* KKObserver.framework in Frameworks */,
-				ACCDE3EB1DE94BE900E6C255 /* KKLua.framework in Frameworks */,
+				AC7F32711E72667900868EE8 /* KKLua.framework in Frameworks */,
+				AC7F32721E72667900868EE8 /* KKObserver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC7F326E1E72667900868EE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC7F326F1E72667900868EE8 /* KKLua.framework */,
+				AC7F32701E72667900868EE8 /* KKObserver.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ACCDE3C21DE94BB000E6C255 = {
 			isa = PBXGroup;
 			children = (
-				ACCDE3DD1DE94BC900E6C255 /* KKLua.xcodeproj */,
-				ACCDE3D71DE94BC200E6C255 /* KKObserver.xcodeproj */,
 				ACCDE3CE1DE94BB000E6C255 /* KKObserverLua */,
 				ACCDE3CD1DE94BB000E6C255 /* Products */,
+				AC7F326E1E72667900868EE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,22 +78,6 @@
 				ACCDE3F21DE94E6500E6C255 /* KKObserver+Lua.m */,
 			);
 			path = KKObserverLua;
-			sourceTree = "<group>";
-		};
-		ACCDE3D81DE94BC200E6C255 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				ACCDE3DC1DE94BC200E6C255 /* KKObserver.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		ACCDE3DE1DE94BC900E6C255 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				ACCDE3E21DE94BC900E6C255 /* KKLua.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +108,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				ACCDE3EA1DE94BE200E6C255 /* PBXTargetDependency */,
-				ACCDE3E81DE94BDF00E6C255 /* PBXTargetDependency */,
 			);
 			name = KKObserverLua;
 			productName = KKObserverLua;
@@ -181,39 +140,12 @@
 			mainGroup = ACCDE3C21DE94BB000E6C255;
 			productRefGroup = ACCDE3CD1DE94BB000E6C255 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = ACCDE3DE1DE94BC900E6C255 /* Products */;
-					ProjectRef = ACCDE3DD1DE94BC900E6C255 /* KKLua.xcodeproj */;
-				},
-				{
-					ProductGroup = ACCDE3D81DE94BC200E6C255 /* Products */;
-					ProjectRef = ACCDE3D71DE94BC200E6C255 /* KKObserver.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				ACCDE3CB1DE94BB000E6C255 /* KKObserverLua */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		ACCDE3DC1DE94BC200E6C255 /* KKObserver.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = KKObserver.framework;
-			remoteRef = ACCDE3DB1DE94BC200E6C255 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		ACCDE3E21DE94BC900E6C255 /* KKLua.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = KKLua.framework;
-			remoteRef = ACCDE3E11DE94BC900E6C255 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		ACCDE3CA1DE94BB000E6C255 /* Resources */ = {
@@ -236,19 +168,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		ACCDE3E81DE94BDF00E6C255 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KKObserver;
-			targetProxy = ACCDE3E71DE94BDF00E6C255 /* PBXContainerItemProxy */;
-		};
-		ACCDE3EA1DE94BE200E6C255 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KKLua;
-			targetProxy = ACCDE3E91DE94BE200E6C255 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		ACCDE3D21DE94BB000E6C255 /* Debug */ = {
@@ -364,6 +283,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.kkserver.KKObserverLua;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
