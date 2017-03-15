@@ -27,21 +27,21 @@ static int KKObserverOnFunction(lua_State * L) {
         
         if([keys isKindOfClass:[NSArray class]]) {
             
-            lua_pushvalue(L, -top +2);
+            lua_pushvalue(L, -top +1);
             
             KKLuaRef * ref = [[KKLuaRef alloc] initWithL:L];
             
             [v on:keys :^(KKObserver * observer, NSArray<NSString *> * changedKeys, id weakObject) {
                 
+                [ref get];
+                
                 lua_pushObject(ref.L, observer);
                 lua_newtable(ref.L);
                 
                 int i = 1;
-                char s[128];
                 
                 for(NSString * key in changedKeys) {
-                    sprintf(s,"%d",i);
-                    lua_pushstring(ref.L, s);
+                    lua_pushinteger(ref.L, i);
                     lua_pushstring(ref.L, [key UTF8String]);
                     lua_rawset(ref.L, -3);
                     i ++;
@@ -49,12 +49,11 @@ static int KKObserverOnFunction(lua_State * L) {
                 
                 lua_pushValue(ref.L, weakObject);
                 
-                [ref get];
-                
                 if(0 != lua_pcall(ref.L, 3, 0, 0)) {
                     NSLog(@"[KK][KKObserverLua][KKObserverOnFunction] %s",lua_tostring(ref.L, -1));
                     lua_pop(ref.L, 1);
                 }
+                
                 
             } :weakObject :children];
             
