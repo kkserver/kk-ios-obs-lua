@@ -54,11 +54,12 @@ static int KKObserverOnFunction(lua_State * L) {
                     lua_pop(ref.L, 1);
                 }
                 
-                
             } :weakObject :children];
             
         }
     }
+    
+    assert(lua_gettop(L) == top);
     
     return 0;
 }
@@ -80,13 +81,9 @@ static int KKObserverOffFunction(lua_State * L) {
         [v off:keys :weakObject];
     }
     
+    assert(lua_gettop(L) == top);
+    
     return 0;
-}
-
-static int KKObserverParentFunction(lua_State * L) {
-    KKObserver * v = lua_toObject(L, lua_upvalueindex(1));
-    lua_pushValue(L, v.parent);
-    return 1;
 }
 
 
@@ -109,8 +106,7 @@ static int KKObserverParentFunction(lua_State * L) {
     }
     else if([key isEqualToString:@"parent"]) {
         
-        lua_pushObject(L, self);
-        lua_pushcclosure(L, KKObserverParentFunction, 1);
+        lua_pushValue(L, self.parent);
         
         return 1;
     }
