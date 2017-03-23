@@ -62,6 +62,114 @@ static int KKObjectGetFunction(lua_State * L) {
     return 0;
 }
 
+static int KKObjectStringValueFunction(lua_State * L) {
+    
+    KKObject * v = lua_toObject(L, lua_upvalueindex(1));
+    
+    int top = lua_gettop(L);
+    
+    if(top > 0 ) {
+        
+        id keys = lua_toValue(L, - top);
+        
+        id r = nil;
+        
+        if([keys isKindOfClass:[NSString class]]) {
+            r = [v stringValue:[NSArray arrayWithObject:keys] :@""];
+        }
+        else if([keys isKindOfClass:[NSArray class]]) {
+            r = [v stringValue:keys :@""];
+        }
+        
+        lua_pushValue(L, r);
+        
+        return 1;
+    }
+    
+    return 0;
+}
+
+static int KKObjectIntValueFunction(lua_State * L) {
+    
+    KKObject * v = lua_toObject(L, lua_upvalueindex(1));
+    
+    int top = lua_gettop(L);
+    
+    if(top > 0 ) {
+        
+        id keys = lua_toValue(L, - top);
+        
+        id r = nil;
+        
+        if([keys isKindOfClass:[NSString class]]) {
+            r = @([v intValue:[NSArray arrayWithObject:keys] :0]);
+        }
+        else if([keys isKindOfClass:[NSArray class]]) {
+            r = @([v intValue:keys :0]);
+        }
+        
+        lua_pushValue(L, r);
+        
+        return 1;
+    }
+    
+    return 0;
+}
+
+static int KKObjectDoubleValueFunction(lua_State * L) {
+    
+    KKObject * v = lua_toObject(L, lua_upvalueindex(1));
+    
+    int top = lua_gettop(L);
+    
+    if(top > 0 ) {
+        
+        id keys = lua_toValue(L, - top);
+        
+        id r = nil;
+        
+        if([keys isKindOfClass:[NSString class]]) {
+            r = @([v doubleValue:[NSArray arrayWithObject:keys] :0]);
+        }
+        else if([keys isKindOfClass:[NSArray class]]) {
+            r = @([v doubleValue:keys :0]);
+        }
+        
+        lua_pushValue(L, r);
+        
+        return 1;
+    }
+    
+    return 0;
+}
+
+static int KKObjectBooleanValueFunction(lua_State * L) {
+    
+    KKObject * v = lua_toObject(L, lua_upvalueindex(1));
+    
+    int top = lua_gettop(L);
+    
+    if(top > 0 ) {
+        
+        id keys = lua_toValue(L, - top);
+        
+        id r = nil;
+        
+        if([keys isKindOfClass:[NSString class]]) {
+            r = @([v booleanValue:[NSArray arrayWithObject:keys] :0]);
+        }
+        else if([keys isKindOfClass:[NSArray class]]) {
+            r = @([v booleanValue:keys :0]);
+        }
+        
+        lua_pushValue(L, r);
+        
+        return 1;
+    }
+    
+    return 0;
+}
+
 static int KKObjectSetFunction(lua_State * L) {
     
     KKObject * v = lua_toObject(L, lua_upvalueindex(1));
@@ -110,6 +218,34 @@ static int KKObjectSetFunction(lua_State * L) {
         
         lua_pushObject(L, self);
         lua_pushcclosure(L, KKObjectGetFunction, 1);
+        
+        return 1;
+    }
+    else if([key isEqualToString:@"stringValue"]) {
+        
+        lua_pushObject(L, self);
+        lua_pushcclosure(L, KKObjectStringValueFunction, 1);
+        
+        return 1;
+    }
+    else if([key isEqualToString:@"intValue"]) {
+        
+        lua_pushObject(L, self);
+        lua_pushcclosure(L, KKObjectIntValueFunction, 1);
+        
+        return 1;
+    }
+    else if([key isEqualToString:@"booleanValue"]) {
+        
+        lua_pushObject(L, self);
+        lua_pushcclosure(L, KKObjectBooleanValueFunction, 1);
+        
+        return 1;
+    }
+    else if([key isEqualToString:@"doubleValue"]) {
+        
+        lua_pushObject(L, self);
+        lua_pushcclosure(L, KKObjectDoubleValueFunction, 1);
         
         return 1;
     }
